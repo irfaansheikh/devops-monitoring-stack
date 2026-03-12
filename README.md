@@ -1,5 +1,26 @@
-# devops-project-4-monitoring
-devops-project-4-monitoring
+# devops-monitoring-stack
+devops-monitoring-stack
 
-Monitoring
+Monitoring Stack
+
+
+
+Architecture diagram
+
+
+Setup instructions
+
+
+
+Screenshots
+
+
+
+Tools used
+
+
+
+Explanation of workflow
+
+
 
