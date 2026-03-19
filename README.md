@@ -18,17 +18,11 @@ This project sets up a complete monitoring stack inside a Kubernetes cluster whe
 
 User (Browser)<br>
       ↓<br>
-Node Exporter (metrics source)<br>
-      ↓<br>
-Prometheus (collection)<br>
-      ↓<br>
-Grafana (visualization)<br>
-
-User (Browser)<br>
-      ↓<br>
 Grafana (Visualization Layer)<br>
       ↓<br>
 Prometheus (Metrics Collection)<br>
+      ↓<br>
+Node Exporter (metrics source)<br>
       ↓<br>
 Kubernetes Cluster (Pods & Nodes)
 
@@ -36,7 +30,8 @@ Project Structure
 devops-monitoring-stack/<br>
  ├── monitoring/<br>
  │    ├── prometheus.yaml<br>
- │    └── grafana.yaml<br>
+ │    ├── grafana.yaml<br>
+ │    └── node-exporter.yaml<br>
  └── README.md
 
 # Tools Used
@@ -82,6 +77,11 @@ Start Cluster
 
       minikube start
       kubectl get nodes
+      kubectl get pods
+
+Deploy Node Exporter
+
+      kubectl apply -f node-exporter.yaml
 
 Deploy Prometheus
 
@@ -112,7 +112,7 @@ Add Prometheus Data Source
 
       URL: http://prometheus:9090
 
-# Dashboard Setup
+# Import Dashboard
 
 Import dashboard using ID:
 
@@ -136,36 +136,68 @@ Import dashboard using ID:
       • Monitor application-level metrics
       • Deploy on cloud Kubernetes (EKS/GKE)
 
-Screenshots
+# Screenshots
 
 Start Cluster
-
-![Start Cluster](<./ss/>)
+ 
+![Start Cluster](<./ss/start-cluster.png>)
 
 Deploy Prometheus
 
-![Deploy Prometheus](<./ss/>)
+![Deploy Prometheus](<./ss/deploy-prometheus.png>)
 
 Deploy Grafana
 
-![Deploy Grafana](<./ss/>)
+![Deploy Grafana](<./ss/deploy-grafana.png>)
+
+Apply Node Exporter
+
+![Apply Node Exporter](<./ss/apply-node-exporter.png>)
 
 Verify Resources
 
-![Verify Resources](<./ss/>)
+![Verify Resources](<./ss/pods.png>)
 
 Access Services
 
-![Access Services](<./ss/>)
+![Access Services](<./ss/access-services.png>)
+
+Prometheus targets (UP)
+
+![Prometheus targets](<./ss/prometheus-targets.png>)
+
+Node Query on Prometheus
+
+![Node Query on Prometheus](<./ss/prometheus-node-query.png>)
 
 Grafana Setup
 
-![Grafana Setup](<./ss/>)
+![Grafana Setup](<./ss/grafana-setup1.png>)
 
-Dashboard Setup
+![Grafana Setup](<./ss/grafana-setup2.png>)
+ 
+# Dashboard Setup
 
-![Dashboard Setup](<./ss/>)
+Prometheus as Data Source
 
-Cleanup
+![Prometheus as Data Source](<./ss/data-source.png>)
+ 
+Import Dashboad with ID=1860
 
-![Cleanup](<./ss/>)
+![Import Dashboad](<./ss/import-dashboad.png>)
+
+Dashboard Metrics
+
+![Dashboard Metrics](<./ss/dashboard-metrics.png>)
+
+Dashboard Graphs
+
+![Dashboard Graphs1](<./ss/dashboard-graphs1.png>)
+
+![Dashboard Graphs2](<./ss/dashboard-graphs2.png>)
+
+# Cleanup
+
+Delete Cluster
+
+![Delete Cluster](<./ss/delete-cluster.png>)
