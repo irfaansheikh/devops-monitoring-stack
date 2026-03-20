@@ -1,12 +1,14 @@
-![Monitoring Stack](./ss/monitoring-stack.png)
+![Monitoring Stack1](./ss/monitoring-stack1.png)
 # Monitoring Stack
 
 Monitoring Stack (Kubernetes + Prometheus + Grafana)
 
 A production-style DevOps project demonstrating Kubernetes monitoring using Prometheus for metrics collection and Grafana for visualization.
 
-# Project Overview
+![Monitoring Stack](./ss/monitoring-stack2.png)
 
+# Project Overview
+ 
 Monitoring is a critical component of modern DevOps and production systems.
 
 This project sets up a complete monitoring stack inside a Kubernetes cluster where:
@@ -16,15 +18,15 @@ This project sets up a complete monitoring stack inside a Kubernetes cluster whe
 
 # Architecture
 
-User (Browser)<br>
-      ↓<br>
-Grafana (Visualization Layer)<br>
-      ↓<br>
-Prometheus (Metrics Collection)<br>
-      ↓<br>
-Node Exporter (metrics source)<br>
-      ↓<br>
-Kubernetes Cluster (Pods & Nodes)
+      User (Browser)
+            ↓
+      Grafana (Visualization Layer)
+            ↓
+      Prometheus (Metrics Collection)
+            ↓
+      Node Exporter (metrics source)
+            ↓
+      Kubernetes Cluster (Pods & Nodes)
 
 Project Structure
 devops-monitoring-stack/<br>
